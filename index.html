@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+
+<meta name="viewport" content= " user-scalable=no">
+
+<title>Calculator</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+ 
+}
+body{
+    align-items: centre;
+    overflow: hidden;
+}
+.cont{
+
+background-color: cornflowerblue;
+height:200vh;
+padding:30px;
+
+width: 100%;
+}
+
+.btn{
+
+
+
+border: 0;
+
+outline: 0;
+
+width: 200px;
+
+height: 200px;
+
+border-radius: 10px;
+
+box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+
+background: transparent;
+
+font-size: 50px;
+
+color: #fff;
+
+cursor: pointer;
+
+margin: 20px;
+
+}
+
+
+.btnn{
+
+
+border: 0;
+
+outline: 0;
+
+width: 200px;
+
+height: 200px;
+
+border-radius: 10px;
+
+box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+
+background: transparent;
+
+font-size: 50px;
+
+color: #fff;
+
+cursor: pointer;
+
+margin: 20px;
+
+}
+
+.equal{
+
+border: 0;
+
+outline: 0;
+
+width: 440px;
+
+height: 200px;
+
+border-radius: 10px;
+
+box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+
+background: blue;
+
+font-size: 50px;
+
+color: #fff;
+
+cursor: pointer;
+
+margin: 20px;
+
+}
+
+.input{
+
+
+border: 0;
+
+outline: 0;
+
+width: 850px;
+
+height: 650px;
+
+text-align: right;
+
+background: transparent;
+
+font-size: 200px;
+
+color: #fff;
+
+cursor: pointer;
+
+margin: 10px;
+
+
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="cont">
+
+<input class="input">
+
+<div class="row">
+
+<button class="btn">c</button>
+
+<button class="btn">%</button>
+
+<button class="btn">.</button>
+
+<button class="btn">+</button>
+
+
+</div>
+
+<div class="row">
+
+<button class="btn">7</button>
+
+<button class="btn">8</button>
+
+<button class="btn">9</button onclick="btn()">
+
+<button class="btn">/</button>
+
+
+</div>
+
+<div class="row">
+
+<button class="btn">4</button>
+
+<button class="btn">5</button>
+
+<button class="btn">6</button>
+
+<button class="btn">*</button>
+
+
+</div>
+
+<div class="row">
+
+<button class="btn">1</button onclick="btn()">
+
+<button class="btn">2</button>
+
+<button class="btn">3</button>
+
+<button class="btn">-</button>
+
+
+</div>
+
+<div class="row">
+
+<button class="btn btnn"  >00</button>
+
+<button class="btn">0</button>
+
+<button class="btn equal" >=</button>
+
+<!-- <button class="btn">0</button> -->
+
+
+</div> 
+
+</div> 
+
+<script>
+
+let arr = ""
+
+btns = document.querySelectorAll('.btn')
+
+Array.from(btns).forEach((bns)=> {
+
+bns.addEventListener("click" , (e)=>{
+if(e.target.innerHTML == '='){
+    arr = eval(arr)
+document.querySelector('.input').value = arr
+}
+else if(e.target.innerHTML == 'c'){
+    arr = ""
+document.querySelector('.input').value = arr
+}
+
+else{
+console.log(e.target)
+arr = arr + e.target.innerHTML
+document.querySelector('.input').value = arr
+}
+})
+
+});
+
+</script>
+
+
+</body>
+
+
+</html>
